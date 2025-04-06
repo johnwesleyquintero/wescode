@@ -1,16 +1,19 @@
 export function Alert({ children, className, type }) {
     return (
         <div
+            role="alert"
+            aria-live="polite"
+            aria-atomic="true"
             className={[
                 'flex gap-4 p-4 rounded-sm',
-                type === 'error' ? 'bg-rose-400 text-neutral-900' : 'bg-primary text-primary-content',
+                type === 'error' ? 'bg-rose-500 text-white' : 'bg-primary text-primary-content',
                 className
             ]
                 .filter(Boolean)
                 .join(' ')}
         >
-            <AlertIcon type={type} className="w-6 h-6 fill-current shrink-0" />
-            {children}
+            <AlertIcon type={type} className="w-6 h-6 fill-current shrink-0" aria-hidden="true" />
+            <div className="flex-1">{children}</div>
         </div>
     );
 }
