@@ -4,7 +4,9 @@
 
 WesCode Full-Stack Starter
 
-A starting point for building modern, full-stack web applications with Next.js and the power of serverless.</div>
+A starting point for building modern, full-stack web applications with Next.js and the power of serverless.
+
+[🚀 Live Demo](https://wescode.netlify.app/)</div>
 
 ## Key Technologies
 
@@ -20,8 +22,12 @@ A starting point for building modern, full-stack web applications with Next.js a
 
 ## Features Demonstrated
 
--   Next.js features (e.g., routing, components, API routes).
--   Serverless functions.
--   Contextual alerts.
--   Dynamic content fetching.
+-   Next.js App Router and Server Components
+-   Edge Functions and Middleware
+-   Blob Storage Integration
+-   Dynamic Image CDN
+-   Contextual Alerts System
+-   Real-time Content Generation
+-   Serverless API Routes
+-   Tailwind CSS Styling
 
