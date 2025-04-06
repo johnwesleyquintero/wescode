@@ -25,6 +25,3 @@ A starting point for building modern, full-stack web applications with Next.js a
 -   Contextual alerts.
 -   Dynamic content fetching.
 
-## Contributing
-
-(Optional) If you want to make it open-source, add instructions on how to contribute.
