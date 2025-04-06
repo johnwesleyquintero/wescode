@@ -14,29 +14,31 @@ const navItems = [
 
 export function Header() {
     return (
-        <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
+        <nav className="flex flex-wrap items-center justify-between gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
             <Link href="/">
-                <Image src={wescodeLogo} alt="Netlify logo" />
+                <Image src={wescodeLogo} alt="WesCode logo" width={100} height={40} />
             </Link>
-            {!!navItems?.length && (
-                <ul className="flex flex-wrap gap-x-4 gap-y-1">
-                    {navItems.map((item, index) => (
-                        <li key={index}>
-                            <Link href={item.href} className="inline-flex px-1.5 py-1 sm:px-3 sm:py-2">
-                                {item.linkText}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            )}
-            <Link
-                href="https://github.com/johnwesleyquintero/wescode"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden lg:inline-flex lg:ml-auto"
-            >
-                <Image src={githubLogo} alt="GitHub logo" className="w-7" />
-            </Link>
+            <div className="flex items-center gap-4">
+                {!!navItems?.length && (
+                    <ul className="flex flex-wrap gap-x-4 gap-y-1">
+                        {navItems.map((item, index) => (
+                            <li key={index}>
+                                <Link href={item.href} className="inline-flex px-1.5 py-1 sm:px-3 sm:py-2">
+                                    {item.linkText}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+                <Link
+                    href="https://github.com/johnwesleyquintero/wescode"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex"
+                >
+                    <Image src={githubLogo} alt="GitHub logo" className="w-7" />
+                </Link>
+            </div>
         </nav>
     );
 }

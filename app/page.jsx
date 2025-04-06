@@ -6,19 +6,15 @@ import { RandomQuote } from 'components/random-quote';
 import { getNetlifyContext } from 'utils';
 
 const contextExplainer = `
-The card below is rendered on the server based on the value of \`process.env.CONTEXT\` 
-([docs](https://docs.netlify.com/configure-builds/environment-variables/#build-metadata)):
+This card demonstrates how to access and display the current Netlify context (e.g., 'production', 'deploy-preview', 'dev'). This is useful for conditional rendering and environment-specific configurations.
 `;
 
 const preDynamicContentExplainer = `
-The card content below is fetched by the client-side from \`/quotes/random\` (see file \`app/quotes/random/route.js\`) with a different quote shown on each page load:
+This section showcases dynamic content fetched client-side. The quote below is retrieved from the \`/quotes/random\` API route, demonstrating how to integrate dynamic data into your application.
 `;
 
 const postDynamicContentExplainer = `
-On Netlify, Next.js Route Handlers are automatically deployed as [Serverless Functions](https://docs.netlify.com/functions/overview/).
-Alternatively, you can add Serverless Functions to any site regardless of framework, with acccess to the [full context data](https://docs.netlify.com/functions/api/).
-
-And as always with dynamic content, beware of layout shifts & flicker! (here, we aren't...)
+Next.js Route Handlers, when deployed on Netlify, become Serverless Functions. This allows you to create API endpoints directly within your Next.js application. You can also add Serverless Functions to any site regardless of framework, with acccess to the full context data.
 `;
 
 const ctx = getNetlifyContext();
@@ -28,11 +24,18 @@ export default function Page() {
         <div className="flex flex-col gap-12 sm:gap-16">
             <section>
                 <ContextAlert className="mb-6" />
-                <h1 className="mb-4">Netlify Platform Starter - Next.js</h1>
-                <p className="mb-6 text-lg">Get started with Next.js and Netlify in seconds.</p>
-                <Link href="https://docs.netlify.com/frameworks/next-js/overview/" className="btn btn-lg sm:min-w-64">
-                    Read the Docs
-                </Link>
+                <h1 className="mb-4">Welcome to the WesCode Full-Stack Starter</h1>
+                <p className="mb-6 text-lg">
+                    Your starting point for building modern, full-stack web applications with Next.js and the power of serverless.
+                </p>
+                <div className="flex gap-4">
+                    <Link href="https://nextjs.org/docs" className="btn btn-lg sm:min-w-64">
+                        Next.js Docs
+                    </Link>
+                    <Link href="https://docs.netlify.com/" className="btn btn-lg sm:min-w-64">
+                        Netlify Docs
+                    </Link>
+                </div>
             </section>
             {!!ctx && (
                 <section className="flex flex-col gap-4">
